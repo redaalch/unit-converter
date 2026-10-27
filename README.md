@@ -10,8 +10,8 @@ Chosen theme: Unit Converter. Group size: 2 members.
 
 | Member | GitHub username | Assigned feature | Feature branch |
 | --- | --- | --- | --- |
-| Member A (full name pending) | [redaalch](https://github.com/redaalch) | Temperature conversions: Celsius, Fahrenheit, Kelvin | `feature/temperature` |
-| Member B (full name pending) | [Nour-2101](https://github.com/Nour-2101) | Length conversions: meters, kilometers, miles | `feature/length` |
+| Reda Alalach | [redaalch](https://github.com/redaalch) | Temperature conversions: Celsius, Fahrenheit, Kelvin | `feature/temperature` |
+| Nour El Houda Garaoui | [Nour-2101](https://github.com/Nour-2101) | Length conversions: meters, kilometers, miles | `feature/length` |
 
 Each member will make at least two meaningful commits on their feature branch and add at least three meaningful unit tests. The complete suite will cover normal conversions, boundary values, and invalid inputs.
 
