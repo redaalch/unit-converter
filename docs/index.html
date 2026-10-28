@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Python unit converter for temperature and length by Reda Alalach and Nour El Houda Garaoui.">
+    <title>Unit Converter | Reda and Nour</title>
+    <style>
+        :root {
+            --page-background: #f5f7fb;
+            --surface: #ffffff;
+            --text: #243047;
+            --heading: #243b64;
+            --muted: #526078;
+            --code-background: #edf0f6;
+            --focus: #a04b00;
+            --body-font: Arial, sans-serif;
+            --code-font: Consolas, "Courier New", monospace;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { overflow-x: clip; }
+        body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 20px;
+            font-family: var(--body-font);
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--page-background);
+        }
+        header {
+            padding: 24px;
+            border-radius: 8px;
+            color: var(--surface);
+            background: var(--heading);
+        }
+        h1, h2 { overflow-wrap: break-word; min-width: 0; }
+        h1 { margin: 0 0 8px; }
+        header p { margin: 0; }
+        header a { display: inline-block; margin-top: 16px; color: var(--surface); }
+        section {
+            margin-top: 20px;
+            padding: 24px;
+            border-radius: 8px;
+            background: var(--surface);
+        }
+        h2 { margin-top: 0; color: var(--heading); font-size: 1.35rem; }
+        a { color: var(--heading); text-underline-offset: 3px; }
+        a:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+        code { padding: 2px 4px; background: var(--code-background); font-family: var(--code-font); }
+        pre { max-width: 100%; padding: 16px; overflow-x: auto; background: var(--code-background); }
+        pre code { padding: 0; font-size: 0.9rem; }
+        li + li { margin-top: 6px; }
+        footer { padding-top: 20px; color: var(--muted); font-size: 0.9rem; }
+        @media (max-width: 480px) {
+            body { padding: 16px 12px; }
+            header, section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Unit Converter</h1>
+        <p>A Python project for converting temperatures and lengths.</p>
+        <a href="https://github.com/redaalch/unit-converter">View the GitHub repository</a>
+    </header>
+
+    <main>
+        <section aria-labelledby="project-title">
+            <h2 id="project-title">About the project</h2>
+            <p><strong>Theme:</strong> Unit Converter. Built for Assignment 2: GitHub Collaboration &amp; Automation by a group of two members.</p>
+            <p>The conversion functions run in Python. This static page documents the project and explains how to use it locally.</p>
+        </section>
+
+        <section aria-labelledby="team-title">
+            <h2 id="team-title">Team members</h2>
+            <ul>
+                <li><strong>Reda Alalach</strong> (<a href="https://github.com/redaalch">redaalch</a>): temperature conversion and tests.</li>
+                <li><strong>Nour El Houda Garaoui</strong> (<a href="https://github.com/Nour-2101">Nour-2101</a>): length conversion and tests.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="features-title">
+            <h2 id="features-title">Implemented features</h2>
+            <ul>
+                <li><strong>Temperature:</strong> convert between Celsius (<code>C</code>), Fahrenheit (<code>F</code>), and Kelvin (<code>K</code>). Reject invalid units, non-finite values, and temperatures below absolute zero.</li>
+                <li><strong>Length:</strong> convert between meters (<code>m</code>), kilometers (<code>km</code>), and miles (<code>mi</code>). Reject negative lengths and unknown units.</li>
+                <li><strong>Automated checks:</strong> pytest tests cover normal conversions, boundaries, and invalid inputs. GitHub Actions runs the suite on pushes and Pull Requests.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="setup-title">
+            <h2 id="setup-title">Local setup</h2>
+            <p>Use Python 3.12. Clone the repository, create a virtual environment, and install the test dependency:</p>
+            <pre><code>git clone https://github.com/redaalch/unit-converter.git
+cd unit-converter
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt</code></pre>
+            <p>On Windows, create the environment with <code>py -3.12 -m venv .venv</code>. Activate it with <code>.venv\Scripts\activate.bat</code> in Command Prompt or <code>.\.venv\Scripts\Activate.ps1</code> in PowerShell.</p>
+        </section>
+
+        <section aria-labelledby="usage-title">
+            <h2 id="usage-title">Use the converters</h2>
+            <p>From the repository root, start Python with <code>python</code>, then run:</p>
+            <pre><code>from unit_converter.temperature import convert_temperature
+from unit_converter.length import convert_length
+
+print(round(convert_temperature(0, "C", "F"), 2))
+print(convert_length(1, "mi", "m"))</code></pre>
+            <p>The examples print <code>32.0</code> and <code>1609.344</code>. Use <code>exit()</code> to return to the terminal.</p>
+        </section>
+
+        <section aria-labelledby="tests-title">
+            <h2 id="tests-title">Run the tests</h2>
+            <p>With the virtual environment active, run the complete suite from the repository root:</p>
+            <pre><code>python -m pytest -q</code></pre>
+            <p>Test files are in <code>tests/</code>. The conversion modules are in <code>unit_converter/</code>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Reda Alalach and Nour El Houda Garaoui. Unit Converter.</p>
+    </footer>
+</body>
+</html>

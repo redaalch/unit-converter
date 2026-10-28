@@ -17,7 +17,7 @@ Each member will make at least two meaningful commits on their feature branch an
 
 Each member will open a Pull Request into `main` and review the other member's Pull Request, leaving a meaningful line comment before approval. The group will complete a Request changes cycle and resolve a controlled conflict in the project status line above.
 
-## Initial structure
+## Project structure
 
 ```text
 unit-converter/
@@ -43,11 +43,25 @@ python -m pip install -r requirements.txt
 
 On Windows, activate the virtual environment with `.venv\Scripts\activate`.
 
-The repository currently contains the initial structure. Conversion features and tests will be added through feature branches and Pull Requests. Once tests are added, run the complete suite from the repository root:
+The temperature and length converters are implemented in `unit_converter/`. Run the complete test suite from the repository root:
 
 ```bash
 python -m pytest -q
 ```
+
+## Usage
+
+From the repository root, start Python with `python`, then run:
+
+```python
+from unit_converter.temperature import convert_temperature
+from unit_converter.length import convert_length
+
+print(round(convert_temperature(0, "C", "F"), 2))  # 32.0
+print(convert_length(1, "mi", "m"))  # 1609.344
+```
+
+Use `exit()` to return to the terminal.
 
 ## Collaboration workflow
 
@@ -63,4 +77,8 @@ Member B uses `feature/length` instead. Push the feature branch and open a Pull 
 
 ## Project page
 
-The GitHub Pages URL will be added here after the project page is published and verified.
+The project page is in `docs/index.html`. It documents both converters, the team, local setup, usage, and tests.
+
+GitHub Pages URL: [https://redaalch.github.io/unit-converter/](https://redaalch.github.io/unit-converter/).
+
+Publishing setup: merge the project-page Pull Request, then select `main` and `/docs` under **Settings → Pages → Deploy from a branch**. The site becomes available after the first successful Pages build.
