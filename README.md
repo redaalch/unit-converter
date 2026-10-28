@@ -82,3 +82,10 @@ The project page is in `docs/index.html`. It documents both converters, the team
 GitHub Pages URL: [https://redaalch.github.io/unit-converter/](https://redaalch.github.io/unit-converter/).
 
 Publishing setup: merge the project-page Pull Request, then select `main` and `/docs` under **Settings → Pages → Deploy from a branch**. The site becomes available after the first successful Pages build.
+
+## Group report
+
+The report covers both converters, 35 pytest cases, peer reviews, the controlled README conflict, CI, and the GitHub Pages deployment.
+
+- [Final group report (PDF)](reports/Assignment_2_Report_Reda_Nour.pdf)
+- [Editable group report (Word)](reports/Assignment_2_Report_Reda_Nour.docx)
